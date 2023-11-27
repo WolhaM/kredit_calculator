@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ипотечный калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="spisok.css">
+    <link rel="stylesheet" href="table.css">
+    <script src="script.js"></script>
+    <script src="calc.js"></script>
+    
+</head>
+<body>
+    <div class="calc">
+
+        <div class="left_side">
+
+            <p>Стоимость недвижимости</p>
+            <input type="number" id="valueDisplayField 1" value="0" oninput="updateValue1_1(this.value)">
+            <input type="range" class="DisplayWalker" id="valueDisplayWalker 1" min="0" max="100000000" step="100" value="50" oninput="updateValue1_2(this.value)">
+
+            <p>Первоначальный взнос</p>
+            <input type="number" id="valueDisplayField 2" value="0" oninput="updateValue2_1(this.value)">
+            <input type="range" class="DisplayWalker" id="valueDisplayWalker 2" min="0" max="10000000" step="100" value="50" oninput="updateValue2_2(this.value)">
+            <div class="percent 1">
+                <div class="btn1" id="zero1" onclick="top_percent(0)">0%</div>
+                <div class="btn1" id="ten1" onclick="top_percent(10)">10%</div>
+                <div class="btn1" id="fifteen1" onclick="top_percent(15)">15%</div>
+                <div class="btn1" id="twenty1" onclick="top_percent(20)">20%</div>
+                <div class="btn1" id="twenty_five1" onclick="top_percent(25)">25%</div>
+                <div class="btn1" id="thirdy1" onclick="top_percent(30)">30%</div>
+            </div>
+
+            <p>Срок кредита</p>
+            <input type="number" id="valueDisplayField 3" value="1" oninput="updateValue3_1(this.value)">
+            <input type="range" class="DisplayWalker" id="valueDisplayWalker 3" min="1" max="25" step="1" value="1" oninput="updateValue3_2(this.value)">
+            <div class="years">
+                <div class="btn1" id="five2" onclick="years(5)">5 лет</div>
+                <div class="btn1" id="ten2" onclick="years(10)">10 лет</div>
+                <div class="btn1" id="fifteen2" onclick="years(15)">15 лет</div>
+                <div class="btn1" id="twenty2" onclick="years(20)">20 лет</div>
+            </div>
+
+            <p>Процентная ставка</p>
+            <input type="number" id="valueDisplayField 4" value="1" oninput="updateValue4_1(this.value)">
+            <input type="range" class="DisplayWalker" id="valueDisplayWalker 4" min="1" max="25" step="0.1" value="1" oninput="updateValue4_2(this.value)">
+            <div class="percent 2">
+                <div class="btn1" id="oneFloat3" onclick="bottom_percent(0.1)">0,1%</div>
+                <div class="btn1" id="four_five3" onclick="bottom_percent(4.5)">4,5%</div>
+                <div class="btn1" id="six3" onclick="bottom_percent(6)">6%</div>
+                <div class="btn1" id="seven3" onclick="bottom_percent(7)">7%</div>
+                <div class="btn1" id="seven_three3" onclick="bottom_percent(7.3)">7,3%</div>
+                <div class="btn1" id="seven_five3" onclick="bottom_percent(7.5)">7,5%</div>
+                <div class="btn1" id="nine_one3" onclick="bottom_percent(9.1)">9,1%</div>
+                <div class="btn1" id="ten3" onclick="bottom_percent(10)">10%</div>
+            </div>
+
+        </div>
+        <div class="right_side">
+
+            <div class="monthly_pay">
+                <div id="monthly_summ">0 P</div>
+                <div class="monthly_summ_text">Ваш ежемесячный платеж</div>
+            </div>
+
+            <ol>
+                <li>
+                    <div>Кредит</div>
+                    <div></div>
+                    <div id="int_kredit">0 P</div>
+                </li>
+                <li> 
+                    <div>Проценты</div>
+                    <div></div>
+                    <div id="int_percents">0 P</div>
+                </li>
+                <li>
+                    <div>Проценты + кредит</div>
+                    <div></div>
+                    <div id="int_percents_credit">0 P</div>
+                </li>
+                <li>
+                    <div>Необходимый доход</div>
+                    <div></div>
+                    <div id="int_income">0 P</div>
+                </li>
+            </ol>
+
+            <div class="flex">
+                <div class="btn" onclick="calculating(), createTable(elem, 6, 2)">Вывести график платежей</div>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+       
+    </div>
+    <script src="table.js"></script>
+</body>
+</html>

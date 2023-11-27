@@ -1,0 +1,22 @@
+ul li, ol li {
+    list-style: none;
+}
+
+ol li {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13px;
+    font-size: 15pt;
+}
+
+ol {
+    padding: 0;
+}
+
+li div:nth-child(2) {
+    flex: 1 0;
+    border-bottom: 1px dotted #000;
+    height: 1em;
+    margin: 0 .4em;
+    
+}

@@ -1,0 +1,19 @@
+.table {
+    margin-top: 50px;
+
+}
+
+table {
+    width: 1000px;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td {
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: fit-content;
+    border: 1px solid black;
+}
